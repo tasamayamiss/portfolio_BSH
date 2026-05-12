@@ -265,11 +265,9 @@
   if (emailCopyBtn) {
     emailCopyBtn.addEventListener('click', function() {
       const email = this.getAttribute('data-email');
-      // Используем Clipboard API, если доступен, иначе fallback
       if (navigator.clipboard && window.isSecureContext) {
         navigator.clipboard.writeText(email).then(() => showCopyFeedback(this));
       } else {
-        // Fallback для HTTP или старых браузеров
         const textarea = document.createElement('textarea');
         textarea.value = email;
         textarea.style.position = 'fixed';
@@ -281,7 +279,6 @@
           showCopyFeedback(this);
         } catch (err) {
           console.log('Ошибка копирования', err);
-          // Можно показать email в alert
           alert('Email: ' + email);
         }
         document.body.removeChild(textarea);
