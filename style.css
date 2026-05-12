@@ -437,20 +437,30 @@ body.dark .about-photo {
   font-size: 22px;
 }
 
-.contact-links a {
+.contact-links a,
+.contact-links .email-copy {
   color: #011427;
   transition: color 0.2s;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  display: flex;
+  align-items: center;
 }
 
-body.dark .contact-links a {
+body.dark .contact-links a,
+body.dark .contact-links .email-copy {
   color: #E8E6E1;
 }
 
-.contact-links a:hover {
+.contact-links a:hover,
+.contact-links .email-copy:hover {
   color: #DC5D46;
 }
 
-body.dark .contact-links a:hover {
+body.dark .contact-links a:hover,
+body.dark .contact-links .email-copy:hover {
   color: #E87A66;
 }
 
@@ -734,7 +744,8 @@ body.dark .carousel-counter {
     flex-direction: column-reverse;
   }
   .intro-icon {
-    width: 180px;
+    width: 180px;          /* уменьшили */
+    margin-top: 0;         /* убрали смещение */
   }
   h1 {
     font-size: clamp(36px, 10vw, 48px);
@@ -750,5 +761,18 @@ body.dark .carousel-counter {
   }
   .modal-title {
     font-size: 22px;
+  }
+  .about-wrap {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+  .about-visual {
+    justify-content: center;  /* фото по центру */
+  }
+  .about-photo {
+    width: 220px;
+    height: 220px;
+    transform: none;          /* убираем сдвиг */
   }
 }
