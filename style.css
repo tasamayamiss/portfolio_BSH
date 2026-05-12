@@ -755,7 +755,7 @@ body.dark .carousel-counter {
 /* адаптив */
 @media (max-width: 600px) {
   header {
-    padding: 18px 0 16px;         /* уменьшенные отступы шапки */
+    padding: 18px 0 16px;
   }
 
   .logo {
@@ -773,8 +773,12 @@ body.dark .carousel-counter {
     padding: 20px 0 30px;
   }
 
+  .intro-visual {
+    margin: 10px 0 10px;          /* уменьшенные отступы вокруг иконки */
+  }
+
   .intro-icon {
-    width: 130px;                 /* уменьшенный рисунок */
+    width: 130px;
     max-height: 160px;
     margin-top: 0;
   }
@@ -784,16 +788,16 @@ body.dark .carousel-counter {
   }
 
   .btn-group {
-    margin-bottom: 10px;          /* уменьшен отступ после кнопок */
+    margin-bottom: 10px;
   }
 
   .section-title {
     font-size: 38px;
-    margin-top: 50px;             /* уменьшен отступ перед заголовком */
+    margin-top: 25px;             /* уменьшенный верхний отступ перед заголовком */
   }
 
   .section-title::before {
-    margin-bottom: 18px;
+    margin-bottom: 14px;          /* уменьшенный отступ линии */
   }
 
   .modal-image {
