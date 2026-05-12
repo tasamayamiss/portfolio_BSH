@@ -205,7 +205,6 @@ body.dark .btn-outline:hover {
   max-height: 280px;
   object-fit: contain;
   transition: opacity 0.3s;
-  margin-top: -50px;
 }
 
 /* раздел Работы */
@@ -353,6 +352,11 @@ body.dark .card-tag {
 
 body.dark .card-content h3 {
   color: #E8E6E1;
+}
+
+/* Класс для запрета переноса внутри кавычек */
+.nowrap {
+  white-space: nowrap;
 }
 
 .card-desc {
@@ -750,19 +754,48 @@ body.dark .carousel-counter {
 
 /* адаптив */
 @media (max-width: 600px) {
+  header {
+    padding: 18px 0 16px;         /* уменьшенные отступы шапки */
+  }
+
+  .logo {
+    font-size: 22px;
+  }
+
+  .theme-toggle {
+    width: 40px;
+    height: 40px;
+    font-size: 20px;
+  }
+
   .intro {
     flex-direction: column-reverse;
+    padding: 20px 0 30px;
   }
+
   .intro-icon {
-    width: 180px;
+    width: 130px;                 /* уменьшенный рисунок */
+    max-height: 160px;
     margin-top: 0;
   }
+
   h1 {
     font-size: clamp(36px, 10vw, 48px);
   }
+
+  .btn-group {
+    margin-bottom: 10px;          /* уменьшен отступ после кнопок */
+  }
+
   .section-title {
     font-size: 38px;
+    margin-top: 50px;             /* уменьшен отступ перед заголовком */
   }
+
+  .section-title::before {
+    margin-bottom: 18px;
+  }
+
   .modal-image {
     height: 200px;
   }

@@ -44,9 +44,13 @@
     filtered.forEach(proj => {
       const styleValue = imageStyles[proj.imageLabel] || 'linear-gradient(145deg, #aaa, #888)';
       let bgStyle = styleValue.includes('linear-gradient') ? `background: ${styleValue};` : `background-image: url('${styleValue}'); background-size: cover; background-position: center;`;
+
+      // Обрабатываем заголовок: текст в кавычках оборачиваем в span с классом nowrap
+      const titleWithNowrap = proj.title.replace(/«([^»]+)»/g, '<span class="nowrap">«$1»</span>');
+
       html += `<div class="portfolio-card" data-category="${proj.category}" data-id="${proj.id}">
                 <div class="card-img" style="${bgStyle}"><span class="card-tag">${proj.tag}</span></div>
-                <div class="card-content"><h3>${proj.title}</h3><div class="card-desc">${proj.desc}</div></div>
+                <div class="card-content"><h3>${titleWithNowrap}</h3><div class="card-desc">${proj.desc}</div></div>
               </div>`;
     });
     portfolioGrid.innerHTML = html || '<p style="grid-column:1/-1; text-align:center; padding:40px; color:#4A5A6A;">Пока нет проектов в этой категории</p>';
